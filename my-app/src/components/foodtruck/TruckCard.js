@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, Route } from 'react-router-dom'; 
 import styled from "styled-components";
 
-// Truck prop dynamic details includes:
-// Will global styles successfully style the non-styled components? 
-// Food Truck id # (from basemap)
-// stars/reviews?
-// Food Genre
-// Food truck picture? - Not sure how to link
-// Body: description
+// 1. Will global styles successfully style the non-styled-components? 
+// 2. PROPS: Pass in activeTruck as truck(from basemap -> popup)
+// 3. missing description and // stars/reviews
+// 4. Link and add action to buttons 
+// 5. Create button function 
 
-// Link and add action to buttons 
 const TruckCardComponent = styled.div`
 border: gray; 
 `
@@ -43,13 +40,15 @@ color: white;
 `
 
 export default function TruckCard() {
+const [faveTruck, setFaveTruck] = useState([]); 
+
   return (
     <TruckCardComponent>
       <TruckCardTop>
         <TruckCardRight>
           <h2>(truck.truck_name)</h2>
           <span>Stars component</span>
-          <h3>Food genre(truck.cuisine_type)</h3>
+          <h3>(truck.cuisine_type)</h3>
         </TruckCardRight>
         <TruckCardLeft>
           {/* An image goes inside this div (truck.truck_img_url*/}
