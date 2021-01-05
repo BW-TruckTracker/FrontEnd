@@ -2,8 +2,8 @@ import React from 'react';
 
 
 
-import './footer/Footer.css'
-export default function Footer() {
+
+export default function Navbar() {
   return (
     <div className="NB">
     <nav>
