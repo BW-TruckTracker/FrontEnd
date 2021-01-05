@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from 'styled-components'; 
 
-//* import TruckCard 
-//* export to 'more info button' on homepage 
+//* Route to 'more info button' on homepage or to popup
+// Remember to pass down truck props to FoodTruck and TruckCard
 
-// FoodTruck component includes: 
-// Menu and back button icon, 
-// <TruckCard /> component rendered below
-
+const DirectionsButton = styled.button`
+background-color: gold;
+color: white;
+`
 export default function FoodTruck() {
     return (
         <>
-            <nav className="FoodTruck-nav">
-            <div className="FoodTruck-nav-links">
-                <Link to='/'>Menu Icon</Link>
-                <Link to='/'>Back Button</Link>
-                {/* UseHistory method on the back button?*/}
-            </div>
-        </nav>
-        <button>Get Directions</button>
+        <TruckCard />    
+        <DirectionsButton>Get Directions</DirectionsButton>
         </>
     )
 }
