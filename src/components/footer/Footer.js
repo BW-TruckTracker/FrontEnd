@@ -9,7 +9,7 @@ import './Footer.css';
 export default function Footer() {
   return (
     <div className="footer-container">
-      <Navbar />
+   
       <div className="footer-element">
           <IconButton size='small'>
           <SearchIcon fontSize='large' className='footer-button' />

@@ -1,12 +1,10 @@
 import React from 'react';
 import Navbar from '../components/Navbar.js';
 import Footer from '../components/footer/Footer.js';
-import ReactStars from "react-rating-stars-component";
+import logo1 from '../images/logopng.png'
 
 
-const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+
 
 
 export default function About() {
@@ -14,15 +12,11 @@ export default function About() {
     <div className="Main">
         <Navbar />
         
-        <h1>About Coming Soon. </h1>
+        <h1>We're glad you're here! </h1>
+        <img src={logo1} alt="Go'them trucks stylized bat New York City Food Trucks" />
       
 
-    <ReactStars
-    count={5}
-    onChange={ratingChanged}
-    size={24}
-    activeColor='#2d60ad'
-  />,
+ 
  
 
 
