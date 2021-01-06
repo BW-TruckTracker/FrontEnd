@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LoginForm from './components/LoginForm'
+import LoginForm from './LoginForm'
 
 function Login() {
   const adminUser = {
