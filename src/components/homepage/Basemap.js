@@ -3,6 +3,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 import icon from './food-truck-icon.svg'; //courtesy of Freepik. thank you!
 import './Basemap.css';
+import FoodTruck from '../foodtruck/FoodTruck';
 
 /// DEFAULT Settings
 const mapCenter = [40.72611, -73.99883]; //lat, lng
@@ -53,12 +54,7 @@ export default function Basemap(props) {
                     onClose={() => setActiveTruck(null)} //handler provided by Leaflet
                     >
                         <div className='basemap-popup'>
-                            {/* Replace these lines of code with the main truck component? Or link to More Info button? (can show truck component with customized VW) */}
-                            <img src={"https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"}
-                                alt='example of a food truck' height="75px"/>
-                            <h2>{activeTruck.truck_name}</h2>
-                            <h4>Cusine: {activeTruck.cusine_type}</h4>
-                            <button onClick={()=>null}>More Info</button>
+                        <FoodTruck />
                         </div>
                     </Popup>
                 )}
