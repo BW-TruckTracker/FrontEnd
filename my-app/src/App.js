@@ -1,6 +1,6 @@
 import './App.css';
 import Homepage from './components/homepage/Homepage'
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import React from 'react';
 import SignUp from './components/SignUp';
 import About from './components/About';

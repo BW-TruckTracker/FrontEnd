@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import schema from "./validation/registerSchema";
 import * as yup from "yup";
-import { Link, Route } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import Navbar from '../components/Navbar.js';
 import Footer from '../components/footer/Footer.js';
 
