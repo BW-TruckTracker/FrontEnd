@@ -82,7 +82,17 @@ Main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 50vh;
     
+  }
+
+  nbar{
+    display: flex
+
+  }
+  bar{
+    display: flex;
+    flex-direction: row;
   }
 
 

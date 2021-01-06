@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar.js';
 import Footer from '../components/footer/Footer.js';
 import logo1 from '../images/logopng.png'
-
+import '../App.css';
 
 
 
