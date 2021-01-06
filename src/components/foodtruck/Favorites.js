@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// when do we render this component? 
-// pass in favorites function
+// write favorites function
 
 const FavoritesComponent = styled.div`
 background: brown;
@@ -25,24 +24,21 @@ color: red;
 `
 
 export default function Favorites (props){
-
-// truck is activeTruck passed from TruckCard
-    const { truck } = props 
-
-    return (
-        <FavoritesComponent>
-            <h2>Your Favorite Trucks</h2>
-        <FaveTruckCard>
-        <TruckCardRight>
-          <h2>(truck.truck_name)</h2>
-          <span>Stars component</span>
-          <h3>(truck.cuisine_type)</h3>
-        </TruckCardRight>
-        <TruckCardLeft>
-          {/* An image goes inside this div (truck.truck_img_url*/}
-        </TruckCardLeft>
-        <RemoveButton>x</RemoveButton>
-      </FaveTruckCard>
-        </FavoritesComponent>
-    )
+  
+return (
+    <FavoritesComponent>
+        <h2>Your Favorite Trucks</h2>
+    <FaveTruckCard>
+    <TruckCardRight>
+      <h2>(truck.truck_name)</h2>
+      <span>Stars component</span>
+      <h3>(truck.cuisine_type)</h3>
+    </TruckCardRight>
+    <TruckCardLeft>
+      {/* An image goes inside this div (truck.truck_img_url*/}
+    </TruckCardLeft>
+    <RemoveButton>x</RemoveButton>
+  </FaveTruckCard>
+    </FavoritesComponent>
+)
 }

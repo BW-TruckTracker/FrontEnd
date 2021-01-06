@@ -8,25 +8,19 @@ color: white;
 `
 
 const baseUrl = "https://unit4-build-week-backend.herokuapp.com/api";
-const truckUrl = "trucks"; 
-
-// need to use useParams
-// const { id } = useParams(); 
-// Then in: <Route path='/reviews/:id'> (for which component?)
+const trucksUrl = "trucks"; 
 
 export default function FoodTruck() {
 
-const [truck, setTruck] = useState({}); 
+const [trucks, setTrucks] = useState({}); 
 
 useEffect(() => {
-        axios.get(`${baseUrl}/${truckUrl}`).then(res => setTruck(res.data)).catch(err => console.log('Error from TruckCard endpoint'))
+        axios.get(`${baseUrl}/${trucksUrl}`).then(res => setTrucks(res.data)).catch(err => console.log('Error from TruckCard endpoint'))
         }, []);
-
-//set data to state 
 
     return (
         <>
-        <TruckCard truck={truck} />    
+        <TruckCard trucks={trucks} />  
         <DirectionsButton>Get Directions</DirectionsButton>
         </>
     )
