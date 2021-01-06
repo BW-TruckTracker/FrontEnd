@@ -22,3 +22,20 @@
 @media screen and (min-width: 1200px) {
     /* DESKTOP STYLES */
 }
+
+/* //Max worked  */
+
+.star-bar{
+    display: flex;
+
+}
+
+.star {
+    border-radius: 50%;
+    border: 2px solid Black;
+    fill: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: .5rem;
+      }
+

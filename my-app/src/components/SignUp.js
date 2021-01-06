@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import schema from "../validation/registerSchema";
+import schema from "./validation/registerSchema";
 import * as yup from "yup";
 import { Link, Route } from 'react-router-dom';
+import Navbar from '../components/Navbar.js';
+import Footer from '../components/footer/Footer.js';
 
 const baseUrl = "https://unit4-build-week-backend.herokuapp.com/api";
 const registerUrl = "auth/register";
@@ -117,13 +119,8 @@ export default function SignUp() {
 
   return (
     <>
-    {/* This is the toggle between Sign In and Register */}
-    <nav>
-    {/* This should Link to the sign in component. Make sure path in Route matches also*/}
-      <Link to='/'>Sign In</Link>
-      <Link>Register</Link>
-    </nav>
-
+  
+    <Navbar />
     <form className="form container" onSubmit={registerUser}>
       <div className="register container">
         <label>
@@ -172,11 +169,10 @@ export default function SignUp() {
         {/* This should Link to the sign in component. Make sure path in Route matches also*/}
         <Link to='/'>I'm already a member</Link>
 
-        <Route path='/'>
-          {/* <SignIn/> */}
-        </Route>
+       
       </div>
     </form>
+    <Footer />
     </>
   );
 }
