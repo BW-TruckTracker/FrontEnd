@@ -78,22 +78,43 @@ table {
 /* //Max worked  */
 
 
-Main{
+.main{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 50vh;
+    text-align: center
     
   }
 
-  nbar{
-    display: flex
+  .nbar{
+    display: flex;
+    justify-content: space-around;
 
   }
-  bar{
+  .bar{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
+
+  .central{
+    padding-top: 10vh;
+
+  }
+
+  .enter{
+      background-color: darkgray;
+      color: aliceblue;
+      border-radius: 30%;
+      font-size: 2.5rem;
+      padding: 1rem;
+
+
+
+  }
+
+  
 
 
 
