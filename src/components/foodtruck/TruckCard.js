@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Link, Route } from "react-router-dom";
+import React from "react";
+import { Link, Route, useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import ReactStars from "react-rating-stars-component";
 
-// 2. activeTruck as truck(get request by axios)
 // 3. setFavorites
+// 4. <Route path='/trucks/:id'> (for which component?)
 
+//STYLES 
 const TruckCardComponent = styled.div`
   border: gray;
 `;
@@ -37,9 +38,20 @@ const TruckCardButton = styled.div`
   color: white;
 `;
 
-export default function TruckCard() {
-  const history = useHistory();
+//BEGINNING OF COMPONENT 
+export default function TruckCard(props) {
 
+//pass in props 
+const { trucks } = props; 
+const { id } = useParams(); 
+
+// use this hook to grab dynamic parts of path (:id)
+// if can't find the truck id, the return empty object
+const truck = trucks.find(tr => {
+  return tr.id == id
+}) || {}
+
+  const history = useHistory();
   // Helper functions
   const goToMenu = () => {
     history.push("/menu");
@@ -53,14 +65,14 @@ export default function TruckCard() {
     <TruckCardComponent>
       <TruckCardTop>
         <TruckCardRight>
-          <h2>(truck.truck_name)</h2>
+          <h2>{truck.truck_name}</h2>
           <ReactStars
             count={5}
             onChange={ratingChanged}
             size={24}
             activeColor="#2D60AD"
-          />{" "}
-          <h3>(truck.cuisine_type)</h3>
+          />
+          <h3>{truck.cuisine_type}</h3>
         </TruckCardRight>
         <TruckCardLeft>{/* <img src=`{truck.truck_img_url}`*/}</TruckCardLeft>
       </TruckCardTop>
