@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from './components/LoginForm'
 
-function App() {
+function Login() {
   const adminUser = {
     email: 'admin@admin.com',
     password: 'admin123'
@@ -44,4 +44,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
