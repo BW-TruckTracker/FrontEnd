@@ -11,24 +11,21 @@ function App() {
     <main>
     
 
-      {/* <Link to='/Login'></link> */}
 
       <Router>
       
       <Switch>
-        {/* <Route exact path="/exact" component={Home}/> */}
+       
         <Route path="/SignUp" component={SignUp} />
         <Route path="/Homepage" component={Homepage} />
-        {/* <Route path="/Login" component={Login} /> */}
+        
         <Route path="/About" component={About} />
         
       </Switch>
 
       </Router>
 
-    {/* <div className="App">
-      <Homepage />
-    </div> */}
+   
     </main>
     
   );

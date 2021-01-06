@@ -119,12 +119,7 @@ export default function SignUp() {
 
   return (
     <>
-    {/* This is the toggle between Sign In and Register */}
-    {/* <nav>
-    {/* This should Link to the sign in component. Make sure path in Route matches also*/}
-      {/* <Link to='/'>Sign In</Link>
-      <Link>Register</Link>
-    </nav> */} 
+  
     <Navbar />
     <form className="form container" onSubmit={registerUser}>
       <div className="register container">
