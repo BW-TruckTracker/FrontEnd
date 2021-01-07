@@ -25,7 +25,7 @@ color: red;
 `
 function Favorites (props){
 
-  const [fave, setFave] = useState([]);
+  // const [fave, setFave] = useState([]);
 
   useEffect(() => {
     axios
