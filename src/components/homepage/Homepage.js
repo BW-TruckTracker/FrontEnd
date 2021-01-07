@@ -4,6 +4,7 @@ import './Homepage.css';
 import Basemap from './Basemap.js';
 import Loading from '../loading-screen/Loading.js';
 import Footer from '../footer/Footer.js';
+// import Navbar from '../components/Navbar.js';
 
 export default function Homepage() {
     // define state
@@ -22,6 +23,7 @@ export default function Homepage() {
 
     return (
         <div className='leaflet-container'>
+            {/* <Navbar /> */}
             <Basemap trucksLatLng={trucksLatLng} />
             <Footer /> 
         </div>

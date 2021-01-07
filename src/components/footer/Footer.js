@@ -3,13 +3,13 @@ import SearchIcon from '@material-ui/icons/Search';
 import RoomIcon from '@material-ui/icons/Room';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import IconButton from '@material-ui/core/IconButton';
-import Navbar from '../Navbar';
+
 import './Footer.css';
 
 export default function Footer() {
   return (
     <div className="footer-container">
-      <Navbar />
+   
       <div className="footer-element">
           <IconButton size='small'>
           <SearchIcon fontSize='large' className='footer-button' />
