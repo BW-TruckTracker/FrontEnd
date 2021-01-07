@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar.js';
-import Footer from '../components/footer/Footer.js';
+// import Footer from '../components/footer/Footer.js';
 import food from '../images/foodtruck.png'
 import logom from '../images/menulogo.png'
 import icons from '../images/icons.png'
@@ -8,7 +8,7 @@ import foodstars from '../images/menustars.png'
 import foodicon from '../images/foodicon.png'
 import infoicon from '../images/infoicon.png'
 import '../App.css';
-import {BrowserRouter as Link} from "react-router-dom";
+// import {BrowserRouter as Link} from "react-router-dom";
 
 
 

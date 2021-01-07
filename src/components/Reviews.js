@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.js';
 
 import logor from '../images/reviewlogo.png'
 import '../App.css';
-import {BrowserRouter as Link} from "react-router-dom";
+// import {BrowserRouter as Link} from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 
 
