@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm'
-import '../App.css';
-import Navbar from '../components/Navbar.js';
+
+import Navbar from '../Navbar';
 
 function Login() {
   const adminUser = {

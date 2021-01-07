@@ -15,8 +15,11 @@ export default function Navbar() {
     <div >
     <nav>
         <div className="bar">
+        <div className='separator'>
+          <div className='button'><a href="/About">Home</a></div>
+          </div>
           <div className='separator'>
-          <div className='button'><a href="/Homepage">Home</a></div>
+          <div className='button'><a href="/Homepage">Maps</a></div>
           </div>
           <div className='separator'>
           <div className='button'><a href="/Login">Login</a></div>
@@ -24,9 +27,7 @@ export default function Navbar() {
           <div className='separator' >
           <div className='button'><a href="/signup">Sign up</a></div>
           </div>
-          <div className='separator'>
-          <div className='button'><a href="/About">About Us</a></div>
-          </div>
+          
 
           
         </div>
