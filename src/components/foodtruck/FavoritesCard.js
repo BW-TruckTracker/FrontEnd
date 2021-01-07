@@ -19,7 +19,7 @@ const ratingChanged = (newRating) => {
 };
 
 function FavoritesCard(props) {
-  const { fave, faveArray } = props;
+  const { fave } = props;
 
   const classes = useStyles();
 
