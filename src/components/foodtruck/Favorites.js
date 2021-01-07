@@ -1,48 +1,48 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
-// when do we render this component? 
-// pass in favorites function
+// write favorites function
 
 const FavoritesComponent = styled.div`
 background: brown;
 font-weight: bold; 
 `
 const FaveTruckCard = styled.div`
-border-radius: 10%;
 background: salmon; 
 `
-const TruckCardRight = styled.div`
-border: gray; 
-`
-const TruckCardLeft = styled.div`
-border: gray; 
-`
+
 const RemoveButton = styled.button`
 border: red;
 display: inline-block; 
 color: red; 
 `
+function Favorites (props){
 
-export default function Favorites (props){
-
-// truck is activeTruck passed from TruckCard
-    const { truck } = props 
-
-    return (
-        <FavoritesComponent>
-            <h2>Your Favorite Trucks</h2>
-        <FaveTruckCard>
-        <TruckCardRight>
-          <h2>(truck.truck_name)</h2>
-          <span>Stars component</span>
-          <h3>(truck.cuisine_type)</h3>
-        </TruckCardRight>
-        <TruckCardLeft>
-          {/* An image goes inside this div (truck.truck_img_url*/}
-        </TruckCardLeft>
-        <RemoveButton>x</RemoveButton>
-      </FaveTruckCard>
-        </FavoritesComponent>
-    )
+  useEffect(() => {
+    axios
+    .get('https://unit4-build-week-backend.herokuapp.com/api/favorites')
+    .then(res => 
+      console.log(res.data)
+      // setFave(res.data)
+      )
+    .catch(err => console.log('error from Favorites')) 
+  }, []);
+  
+return (
+  <div>
+    <h1>Hello</h1>
+    <FavoritesComponent>
+        <h2>Your Favorite Trucks</h2>
+    <FaveTruckCard>
+    {console.log('HERE')}
+      <h2>(truck.truck_name)</h2>
+      <span>Stars component</span>
+      <h3>(truck.cuisine_type)</h3>
+    <RemoveButton>x</RemoveButton>
+  </FaveTruckCard>
+    </FavoritesComponent>
+    </div>
+)
 }
+export default Favorites; 
