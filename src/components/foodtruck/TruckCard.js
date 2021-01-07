@@ -17,10 +17,12 @@ const TruckCardRight = styled.div`
 const TruckCardLeft = styled.div`
   border: gray;
 `;
-const TruckImg = styled.img`
-  border-radius: 0.5;
-  border: 1px solid gray;
-`;
+
+// const TruckImg = styled.img`
+//   border-radius: 0.5;
+//   border: 1px solid gray;
+// `;
+
 // Middle of Card
 const TruckCardText = styled.div`
   font-size: 1em;
@@ -75,7 +77,7 @@ export default function TruckCard(props) {
           <h3>truck.cuisine_type</h3>
         </TruckCardRight>
         <TruckCardLeft>
-          <TruckImg>truck.truck_img_url</TruckImg>
+          {/* <TruckImg>truck.truck_img_url</TruckImg> */}
           </TruckCardLeft>
       </TruckCardTop>
       <TruckCardText>
