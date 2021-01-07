@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar.js';
 import Footer from '../components/footer/Footer.js';
-import logo1 from '../images/logopng.png'
+import logor from '../images/reviewlogo.png'
 import '../App.css';
 import {BrowserRouter as Link} from "react-router-dom";
 
@@ -14,12 +14,9 @@ export default function About() {
         <Navbar />
         <div className='central'>
         <h1>Your voice Counts! Leave a review!  </h1>
-        <img src={logo1} alt="Go'them trucks stylized bat New York City Food Trucks" />
+        <img src={logor} alt="Review logo" />
         </div>
-        <Link to="/Homepage">
-        <div className="enter">Enter to Find Great Food!</div>
-        </Link>
-        {/* <a href={/Homepage}>enter</a> */}
+        
       
 
         
@@ -27,7 +24,7 @@ export default function About() {
 
 
 
-     <Footer />
+     
     </div>
   );
 }
