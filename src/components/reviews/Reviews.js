@@ -1,8 +1,7 @@
 import React from 'react';
-import Navbar from '../components/Navbar.js';
-
+import Navbar from '../navbar/Navbar.js';
 import logor from '../images/reviewlogo.png'
-import '../App.css';
+import './Reviews.css';
 import {BrowserRouter as Link} from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../components/Navbar.js';
-import Footer from '../components/footer/Footer.js';
+import Navbar from '../navbar/Navbar.js';
+import Footer from '../footer/Footer.js';
 import logo1 from '../images/logopng.png'
-import '../App.css';
+import '../about/About.css';
 import {BrowserRouter as Link} from "react-router-dom";
 
 

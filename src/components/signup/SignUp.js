@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import schema from "./validation/registerSchema";
+import schema from "../validation/registerSchema";
 import * as yup from "yup";
 import { Link  } from 'react-router-dom';
-import Navbar from '../components/Navbar.js';
-import Footer from '../components/footer/Footer.js';
+import Navbar from '../navbar/Navbar.js';
+import Footer from '../footer/Footer.js';
 
 const baseUrl = "https://unit4-build-week-backend.herokuapp.com/api";
 const registerUrl = "auth/register";
