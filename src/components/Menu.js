@@ -5,6 +5,7 @@ import food from '../images/foodtruck.png'
 import logom from '../images/menulogo.png'
 import icons from '../images/icons.png'
 import foodstars from '../images/menustars.png'
+import foodicon from '../images/foodicon.png'
 import '../App.css';
 import {BrowserRouter as Link} from "react-router-dom";
 
@@ -29,7 +30,7 @@ export default function Menu() {
             <img src={food} alt="Go'them trucks stylized bat New York City Food Trucks" />
        
     </div>
-
+{/* Menu body */}
     <div className='menutitle'>
         Menu
     </div>
@@ -40,8 +41,22 @@ export default function Menu() {
         <div className='foodblock'>
         <h3>Food Item </h3>
         <img src={foodstars} alt="menu item star rating" />
+    </div>
+    {/* food block */}
+        <div className="secondblock">
+            <div >
+            <img src={foodicon} alt="stylized hamburger" />
+            </div>
 
+            <div className="leftborder">
+                Food is good.<br></br>
+                Eat good Food.
+            </div>
+        
         </div>
+        {/* end of food block */}
+
+      
 
 
 
@@ -61,7 +76,7 @@ export default function Menu() {
 
 
 
-     <Footer />
+    
     </div>
   );
 }
