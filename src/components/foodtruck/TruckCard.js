@@ -1,66 +1,94 @@
-import React, { useState } from "react";
-import { Link, Route } from 'react-router-dom'; 
+import React from "react";
+import { useHistory} from "react-router-dom";
 import styled from "styled-components";
+import ReactStars from "react-rating-stars-component";
 
-// 1. Will global styles successfully style the non-styled-components? 
-// 2. PROPS: Pass in activeTruck as truck(from basemap -> popup)
-// 3. missing description and // stars/reviews
-// 4. Link and add action to buttons 
-// 5. Create button function 
-
+//STYLES 
 const TruckCardComponent = styled.div`
-border: gray; 
-`
-//Top of Card  
+  border: gray;
+`;
+//Top of Card
 const TruckCardTop = styled.div`
-border: gray; 
-`
+  border: gray;
+`;
 const TruckCardRight = styled.div`
-border: gray; 
-`
+  border: gray;
+`;
 const TruckCardLeft = styled.div`
-border: gray; 
-`
+  border: gray;
+`;
 const TruckImg = styled.img`
-border-radius: 0.5; 
-border: 1px solid gray; 
-`
-// Middle of Card 
+  border-radius: 0.5;
+  border: 1px solid gray;
+`;
+// Middle of Card
 const TruckCardText = styled.div`
-font-size: 1em; 
-`
-// Bottom of Card 
+  font-size: 1em;
+`;
+// Bottom of Card
 const TruckCardButtons = styled.div`
-border: gray;
-font-size: 1.5em; 
-`
+  border: gray;
+  font-size: 1.5em;
+`;
 const TruckCardButton = styled.div`
-background-color: gold; 
-color: white; 
-`
+  background-color: gold;
+  color: white;
+`;
 
-export default function TruckCard() {
-const [faveTruck, setFaveTruck] = useState([]); 
+//BEGINNING OF COMPONENT 
+export default function TruckCard(props) {
+
+//pass in props 
+// const { trucks } = props; 
+// const { id } = useParams(); 
+
+// use this hook to grab dynamic parts of path (:id)
+// if can't find the truck id, the return empty object
+// const truck = trucks.filter(tr => {
+//   return tr.id === id
+// }) || {}
+
+  const history = useHistory();
+  // Helper functions
+  const goToMenu = () => {
+    history.push("/menu");
+  };
+
+  const goToReview = () => {
+    history.push("/reviews");
+  };
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  }; 
 
   return (
     <TruckCardComponent>
       <TruckCardTop>
         <TruckCardRight>
-          <h2>(truck.truck_name)</h2>
-          <span>Stars component</span>
-          <h3>(truck.cuisine_type)</h3>
+          <h2>truck.truck_name</h2>
+          <ReactStars
+            count={5}
+            onChange={ratingChanged}
+            size={24}
+            activeColor="#2D60AD"
+          />
+          <h3>truck.cuisine_type</h3>
         </TruckCardRight>
         <TruckCardLeft>
-          {/* An image goes inside this div (truck.truck_img_url*/}
-        </TruckCardLeft>
+          <TruckImg>truck.truck_img_url</TruckImg>
+          </TruckCardLeft>
       </TruckCardTop>
       <TruckCardText>
-          <p>This is the truck description.</p>
+        <p>
+          Bacon ipsum dolor amet ground round pork chop porchetta pork loin
+          spare ribs, tenderloin ball tip pancetta shank bacon drumstick. Pork
+          loin leberkas chicken tri-tip porchetta, sausage venison.
+        </p>
       </TruckCardText>
       <TruckCardButtons>
-          <TruckCardButton>See Menu</TruckCardButton>
-          <TruckCardButton>Leave Review</TruckCardButton>
-          <TruckCardButton>Set Favorite</TruckCardButton>
+        <TruckCardButton onClick={goToMenu}>See Menu</TruckCardButton>
+        <TruckCardButton onClick={goToReview}>Leave Review</TruckCardButton>
+        {/* <TruckCardButton onClick={setFave}>Set Favorite</TruckCardButton> */}
       </TruckCardButtons>
     </TruckCardComponent>
   );

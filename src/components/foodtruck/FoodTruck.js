@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from 'styled-components'; 
-
-//* Route to 'more info button' on homepage or to popup
-// Remember to pass down truck props to FoodTruck and TruckCard
+import TruckCard from './TruckCard.js';
 
 const DirectionsButton = styled.button`
 background-color: gold;
 color: white;
 `
+
+const baseUrl = "https://unit4-build-week-backend.herokuapp.com/api";
+const trucksUrl = "trucks"; 
+
 export default function FoodTruck() {
+
+const [trucks, setTrucks] = useState({}); 
+
+useEffect(() => {
+        axios.get(`${baseUrl}/${trucksUrl}`).then(res => setTrucks(res.data)).catch(err => console.log('Error from TruckCard endpoint'))
+        }, []);
+
     return (
         <>
-        <TruckCard />    
+        <TruckCard trucks={trucks} />  
         <DirectionsButton>Get Directions</DirectionsButton>
         </>
     )
