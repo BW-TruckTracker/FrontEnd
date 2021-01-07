@@ -1,10 +1,7 @@
 import React from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import styled from "styled-components";
 import ReactStars from "react-rating-stars-component";
-
-// 3. setFavorites
-// 4. <Route path='/trucks/:id'> (for which component?)
 
 //STYLES 
 const TruckCardComponent = styled.div`
@@ -42,8 +39,8 @@ const TruckCardButton = styled.div`
 export default function TruckCard(props) {
 
 //pass in props 
-const { trucks } = props; 
-const { id } = useParams(); 
+// const { trucks } = props; 
+// const { id } = useParams(); 
 
 // use this hook to grab dynamic parts of path (:id)
 // if can't find the truck id, the return empty object
@@ -66,21 +63,21 @@ const { id } = useParams();
 
   return (
     <TruckCardComponent>
-      {/* <TruckCardTop>
+      <TruckCardTop>
         <TruckCardRight>
-          <h2>{truck.truck_name}</h2>
+          <h2>truck.truck_name</h2>
           <ReactStars
             count={5}
             onChange={ratingChanged}
             size={24}
             activeColor="#2D60AD"
           />
-          <h3>{truck.cuisine_type}</h3>
+          <h3>truck.cuisine_type</h3>
         </TruckCardRight>
         <TruckCardLeft>
-          <TruckImg>{truck.truck_img_url}</TruckImg>
+          <TruckImg>truck.truck_img_url</TruckImg>
           </TruckCardLeft>
-      </TruckCardTop> */}
+      </TruckCardTop>
       <TruckCardText>
         <p>
           Bacon ipsum dolor amet ground round pork chop porchetta pork loin
