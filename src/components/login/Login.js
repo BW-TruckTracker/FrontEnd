@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm'
+import '../App.css';
+import Navbar from '../components/Navbar.js';
 
 function Login() {
   const adminUser = {
@@ -31,7 +33,10 @@ function Login() {
   }
 
   return (
+   
+
     <div className="App">
+       <Navbar />
       {(user.email !== '') ? (
         <div className='welcome'>
         <h2>Welcome,<span>{user.name}</span></h2>
