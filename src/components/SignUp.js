@@ -121,6 +121,8 @@ export default function SignUp() {
     <>
   
     <Navbar />
+    <div className="central">
+      <h2>Signup</h2>
     <form className="form container" onSubmit={registerUser}>
       <div className="register container">
         <label>
@@ -133,6 +135,7 @@ export default function SignUp() {
             value={formValues.username}
             onChange={updateForm}
           />
+          <br></br>
         </label>
         <label>
           Password
@@ -146,6 +149,7 @@ export default function SignUp() {
           />
         </label>
         <label>
+        <br></br>
           Email
           <input
             name="email"
@@ -157,6 +161,7 @@ export default function SignUp() {
           />
         </label>
         <label>
+        <br></br>
           <input
             name="terms"
             type="checkbox"
@@ -165,6 +170,7 @@ export default function SignUp() {
           />
           <span>I agree to all the statements in the <b>terms of service</b></span>
         </label>
+        <br></br>
         <button disabled={disabled}>Sign Up!</button>
         {/* This should Link to the sign in component. Make sure path in Route matches also*/}
         <Link to='/'>I'm already a member</Link>
@@ -172,6 +178,7 @@ export default function SignUp() {
        
       </div>
     </form>
+    </div>
     <Footer />
     </>
   );
