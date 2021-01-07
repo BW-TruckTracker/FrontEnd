@@ -6,6 +6,7 @@ import logom from '../images/menulogo.png'
 import icons from '../images/icons.png'
 import foodstars from '../images/menustars.png'
 import foodicon from '../images/foodicon.png'
+import infoicon from '../images/infoicon.png'
 import '../App.css';
 import {BrowserRouter as Link} from "react-router-dom";
 
@@ -53,12 +54,75 @@ export default function Menu() {
                 Eat good Food.
             </div>
         
+        
+
+        {/* Money block */}
+        <div className='moneyblock'>
+            <div>
+                $1.00
+            </div>
+            <div>
+            <img src={infoicon} alt="information icon" />
+            </div>
+        </div>
+
+
         </div>
         {/* end of food block */}
 
-      
+      {/* food block */}
+      <div className="secondblock">
+            <div >
+            <img src={foodicon} alt="stylized hamburger" />
+            </div>
+
+            <div className="leftborder">
+                Food is good.<br></br>
+                Eat good Food.
+            </div>
+        
+        
+
+        {/* Money block */}
+        <div className='moneyblock'>
+            <div>
+                $1.00
+            </div>
+            <div>
+            <img src={infoicon} alt="information icon" />
+            </div>
+        </div>
 
 
+        </div>
+        {/* end of food block */}
+
+{/* food block */}
+<div className="secondblock">
+            <div >
+            <img src={foodicon} alt="stylized hamburger" />
+            </div>
+
+            <div className="leftborder">
+                Food is good.<br></br>
+                Eat good Food.
+            </div>
+        
+        
+
+        {/* Money block */}
+        <div className='moneyblock'>
+            <div>
+                $1.00
+            </div>
+            <div>
+            <img src={infoicon} alt="information icon" />
+            </div>
+        </div>
+
+
+        </div>
+        {/* end of food block */}
 
     </div>
             
