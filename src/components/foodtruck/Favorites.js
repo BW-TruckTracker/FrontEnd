@@ -1,48 +1,30 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react'; 
+import axios from 'axios';
+import FavoritesCard from './FavoritesCard'; 
+import "./Favorites.css"; 
+import styled from 'styled-components'; 
 
-// write favorites function
-
-const FavoritesComponent = styled.div`
-background: brown;
-font-weight: bold; 
+const FaveHeader = styled.h1`
+color: black; 
 `
-const FaveTruckCard = styled.div`
-background: salmon; 
-`
-
-const RemoveButton = styled.button`
-border: red;
-display: inline-block; 
-color: red; 
-`
-function Favorites (props){
-
-  useEffect(() => {
+function Favorites(){
+  const [ fave, setFave ] = useState([]); 
+  useEffect(()=>{
     axios
-    .get('https://unit4-build-week-backend.herokuapp.com/api/favorites')
-    .then(res => 
-      console.log(res.data)
-      // setFave(res.data)
-      )
-    .catch(err => console.log('error from Favorites')) 
-  }, []);
-  
-return (
-  <div>
-    <h1>Hello</h1>
-    <FavoritesComponent>
-        <h2>Your Favorite Trucks</h2>
-    <FaveTruckCard>
-    {console.log('HERE')}
-      <h2>(truck.truck_name)</h2>
-      <span>Stars component</span>
-      <h3>(truck.cuisine_type)</h3>
-    <RemoveButton>x</RemoveButton>
-  </FaveTruckCard>
-    </FavoritesComponent>
+    .get("https://foodtruck-backend-api.herokuapp.com/api/favorites")
+    .then(res => setFave(res.data))
+    .catch(err => console.log('error from Favorites'))
+  }
+  ,[])
+
+  return (
+    <div className="favorite-background">
+      <FaveHeader>Your Favorite Trucks</FaveHeader>
+      {fave.map((faveTruck) => {
+        return <FavoritesCard id={faveTruck.id} faveTruck={faveTruck}/>;
+      })}
     </div>
-)
+  )
 }
+
 export default Favorites; 

@@ -53,7 +53,6 @@ const {truck} = props;
     <TruckCardComponent>
       <TruckCardTop>
         <h2>{truck.truck_name}</h2>
-          {/* <h2>{truck.truck_name}</h2> */}
           <ReactStars
             count={5}
             onChange={ratingChanged}
