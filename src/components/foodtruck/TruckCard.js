@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import ReactStars from "react-rating-stars-component";
 
@@ -47,9 +47,9 @@ const { id } = useParams();
 
 // use this hook to grab dynamic parts of path (:id)
 // if can't find the truck id, the return empty object
-const truck = trucks.find(tr => {
-  return tr.id == id
-}) || {}
+// const truck = trucks.filter(tr => {
+//   return tr.id === id
+// }) || {}
 
   const history = useHistory();
   // Helper functions
@@ -60,10 +60,13 @@ const truck = trucks.find(tr => {
   const goToReview = () => {
     history.push("/reviews");
   };
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  }; 
 
   return (
     <TruckCardComponent>
-      <TruckCardTop>
+      {/* <TruckCardTop>
         <TruckCardRight>
           <h2>{truck.truck_name}</h2>
           <ReactStars
@@ -74,8 +77,10 @@ const truck = trucks.find(tr => {
           />
           <h3>{truck.cuisine_type}</h3>
         </TruckCardRight>
-        <TruckCardLeft>{/* <img src=`{truck.truck_img_url}`*/}</TruckCardLeft>
-      </TruckCardTop>
+        <TruckCardLeft>
+          <TruckImg>{truck.truck_img_url}</TruckImg>
+          </TruckCardLeft>
+      </TruckCardTop> */}
       <TruckCardText>
         <p>
           Bacon ipsum dolor amet ground round pork chop porchetta pork loin
