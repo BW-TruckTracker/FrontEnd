@@ -27,6 +27,12 @@ export default function Navbar() {
           <div className='separator' >
           <div className='button'><a href="/signup">Sign up</a></div>
           </div>
+          <div className='separator' >
+          <div className='button'><a href="/Menu">Menus</a></div>
+          </div>
+          <div className='separator' >
+          <div className='button'><a href="/Reviews">Reviews</a></div>
+          </div>
           
 
           
