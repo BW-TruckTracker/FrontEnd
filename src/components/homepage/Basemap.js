@@ -16,6 +16,7 @@ const customIcon = new Icon({
 export default function Basemap(props) {
     const [activeTruck, setActiveTruck] = React.useState(null);
 
+    
     return (
         <div>
             {/* DEFINE THE CONTAINER */}
@@ -54,10 +55,11 @@ export default function Basemap(props) {
                     onClose={() => setActiveTruck(null)} //handler provided by Leaflet
                     >
                         <div className='basemap-popup'>
-                        <FoodTruck />
+                        <FoodTruck activeTruck={activeTruck.truck_id}/>
                         </div>
                     </Popup>
-                )}
+                )
+                }
 
             </MapContainer>
 
