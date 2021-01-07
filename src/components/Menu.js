@@ -4,6 +4,7 @@ import Footer from '../components/footer/Footer.js';
 import food from '../images/foodtruck.png'
 import logom from '../images/menulogo.png'
 import icons from '../images/icons.png'
+import foodstars from '../images/menustars.png'
 import '../App.css';
 import {BrowserRouter as Link} from "react-router-dom";
 
@@ -24,18 +25,26 @@ export default function Menu() {
             <img src={icons} alt="3 small icons vegetarian no meat no milk" />
         </div>
 
-        {/* <div className='truckpic'> */}
+       
             <img src={food} alt="Go'them trucks stylized bat New York City Food Trucks" />
-        {/* </div> */}
+       
     </div>
 
     <div className='menutitle'>
         Menu
     </div>
+    
+    <hr></hr>
+    
     <div className="fooditem">
+        <div className='foodblock'>
+        <h3>Food Item </h3>
+        <img src={foodstars} alt="menu item star rating" />
+
+        </div>
 
 
-        
+
     </div>
             
 
