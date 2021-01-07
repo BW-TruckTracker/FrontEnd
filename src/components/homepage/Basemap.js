@@ -4,6 +4,7 @@ import { Icon } from "leaflet";
 import icon from './food-truck-icon.svg'; //courtesy of Freepik. thank you!
 import './Basemap.css';
 
+
 /// DEFAULT Settings
 const mapCenter = [40.72611, -73.99883]; //lat, lng
 const defaultZoom = 13;
@@ -19,7 +20,7 @@ export default function Basemap(props) {
         <div>
             {/* DEFINE THE CONTAINER */}
             <MapContainer center={mapCenter} zoom={defaultZoom}>
-                
+           
                 {/* DEFINE THE TILE */}
                 <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
