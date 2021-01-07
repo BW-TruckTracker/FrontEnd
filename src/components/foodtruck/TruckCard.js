@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory} from "react-router-dom";
 import styled from "styled-components";
 import ReactStars from "react-rating-stars-component";
+import { Button } from "@material-ui/core/index";
 
 //STYLES 
 const TruckCardComponent = styled.div`
@@ -69,8 +70,8 @@ const {truck} = props;
         </p>
       </TruckCardText>
       <TruckCardButtons>
-        <TruckCardButton onClick={goToMenu}>See Menu</TruckCardButton>
-        <TruckCardButton onClick={goToReview}>Leave Review</TruckCardButton>
+        <Button variant="contained" onClick={goToMenu}>See Menu</Button>
+        <Button variant="contained" onClick={goToReview}>Leave Review</Button>
         {/* <TruckCardButton onClick={setFave}>Set Favorite</TruckCardButton> */}
       </TruckCardButtons>
     </TruckCardComponent>
