@@ -90,6 +90,17 @@ hr{
 
 }
 
+footer{
+  
+  padding-top: 6rem
+
+}
+a{
+
+  text-decoration: none;
+
+}
+
 .main{
     display: flex;
     flex-direction: column;
@@ -109,6 +120,7 @@ hr{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 2rem;
   }
 
   .central{
@@ -142,6 +154,9 @@ hr{
 
 
   }
+  
+
+  
 /* Menu page  */
   .title{
     border-bottom: 2px solid darkgray;
