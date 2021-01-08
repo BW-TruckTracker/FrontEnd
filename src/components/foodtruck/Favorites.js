@@ -1,48 +1,46 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import FavoritesCard from "./FavoritesCard";
+import "./Favorites.css";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { Button } from "@material-ui/core/index";
 
-// write favorites function
+const FaveHeader = styled.h1`
+  color: black;
+`;
 
-const FavoritesComponent = styled.div`
-background: brown;
-font-weight: bold; 
-`
-const FaveTruckCard = styled.div`
-background: salmon; 
-`
-
-const RemoveButton = styled.button`
-border: red;
-display: inline-block; 
-color: red; 
-`
-function Favorites (props){
+function Favorites(props) {
+  const [faves, setFaves] = useState([]);
 
   useEffect(() => {
     axios
-    .get('https://unit4-build-week-backend.herokuapp.com/api/favorites')
-    .then(res => 
-      console.log(res.data)
-      // setFave(res.data)
-      )
-    .catch(err => console.log('error from Favorites')) 
+      .get("https://foodtruck-backend-api.herokuapp.com/api/favorites/1")
+      .then((res) => setFaves(res.data))
+      .catch((err) => console.log("error from Favorites"));
   }, []);
-  
-return (
-  <div>
-    <h1>Hello</h1>
-    <FavoritesComponent>
-        <h2>Your Favorite Trucks</h2>
-    <FaveTruckCard>
-    {console.log('HERE')}
-      <h2>(truck.truck_name)</h2>
-      <span>Stars component</span>
-      <h3>(truck.cuisine_type)</h3>
-    <RemoveButton>x</RemoveButton>
-  </FaveTruckCard>
-    </FavoritesComponent>
+
+  const history = useHistory();
+  // Helper functions
+  const returnHome = () => {
+    history.push("/homepage");
+  };
+
+  return (
+    <div className="favorite-background">
+      <FaveHeader>Your Favorite Trucks</FaveHeader>
+      <Button variant="contained" color="default" onClick={returnHome}> Return to Home Page</Button>
+      {faves.map((faveTruck) => {
+        return (
+          <FavoritesCard
+            id={faveTruck.fav_id}
+            fave={faveTruck}
+            faveArray={faves}
+          />
+        );
+      })}
     </div>
-)
+  );
 }
-export default Favorites; 
+
+export default Favorites;

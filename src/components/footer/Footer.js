@@ -5,8 +5,11 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import IconButton from '@material-ui/core/IconButton';
 
 import './Footer.css';
+import { Link } from 'react-router-dom'; 
+
 
 export default function Footer() {
+
   return (
     <div className="footer-container">
    
@@ -26,7 +29,7 @@ export default function Footer() {
       <div className="footer-element">
           <IconButton size='small'>
           <FavoriteIcon fontSize='large' className='footer-button' />
-          <h3>Favorites</h3>
+          <Link to='/Favorites' style={{ color: 'gray', textDecoration: 'none'}}><h3>Favorites</h3></Link>
           </IconButton>
       </div>
     </div>
