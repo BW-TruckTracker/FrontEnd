@@ -1,10 +1,20 @@
 import React from "react";
-import { useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import ReactStars from "react-rating-stars-component";
 import { Button } from "@material-ui/core/index";
+import { makeStyles } from '@material-ui/core/styles';
 
 //STYLES 
+
+const useStyles = makeStyles({
+  root:{
+    margin: 5, 
+    backgroundColor: '#707ea1',
+    color: 'white',
+  },
+})
+
 const TruckCardComponent = styled.div`
 border: gray
 `;
@@ -23,14 +33,13 @@ const TruckCardButtons = styled.div`
   font-size: 1.5em;
 `;
 
-
 //BEGINNING OF COMPONENT 
 export default function TruckCard(props) {
+  const customStyle = useStyles(); 
 
 //pass in props 
 const {truck} = props; 
-
-  const history = useHistory();
+const history = useHistory();
   // Helper functions
   const goToMenu = () => {
     history.push("/menu");
@@ -46,14 +55,14 @@ const {truck} = props;
   return (
     <TruckCardComponent>
       <TruckCardTop>
-        <h2>{truck.truck_name}</h2>
+        <h2>Try {truck.cusine_type}!</h2>
           <ReactStars
             count={5}
             onChange={ratingChanged}
             size={24}
             activeColor="#2D60AD"
           />
-          <h3>{truck.cusine_type}</h3>
+          <h3>{truck.truck_name}</h3>
       </TruckCardTop>
       <TruckCardText>
         <p>
@@ -63,8 +72,8 @@ const {truck} = props;
         </p>
       </TruckCardText>
       <TruckCardButtons>
-        <Button variant="contained" onClick={goToMenu}>See Menu</Button>
-        <Button variant="contained" onClick={goToReview}>Leave Review</Button>
+        <Button className={customStyle.root} variant="contained" onClick={goToMenu}>See Menu</Button>
+        <Button className={customStyle.root} variant="contained" onClick={goToReview}>Leave Review</Button>
         {/* <TruckCardButton onClick={setFave}>Set Favorite</TruckCardButton> */}
       </TruckCardButtons>
     </TruckCardComponent>

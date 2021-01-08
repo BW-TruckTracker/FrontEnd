@@ -23,7 +23,7 @@ export default function FoodTruck(props) {
     return (
         <>
         <TruckCard truck={truck}/>
-        <DirectionsButton>Get Directions</DirectionsButton>
+        {/* <DirectionsButton>Get Directions</DirectionsButton> */}
         </>
     )
 }
