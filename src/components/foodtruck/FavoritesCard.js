@@ -30,7 +30,7 @@ function FavoritesCard(props) {
           {fave.truck_name}
         </Typography>
         <Typography variant="body2" component="h3">
-        Genre: {fave.cusine_type}
+        Cuisine: {fave.cusine_type}
         </Typography>
         <ReactStars
           count={5}
