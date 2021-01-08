@@ -18,19 +18,7 @@ const initialFormValues = {
   terms: false,
 };
 
-//Where should the rest of the request body be created?
-//"current_location_lat": "16.293869", #optional, defaults to target market if not provided.
-//"current_location_long": "26.2199",  #optional, defaults to target market if not provided.
-
-//The success response?
-//     "user_id": 7,
-//     "username": "foodieFan",
-//     "current_location_lat": "16.293869",
-//     "current_location_long": "26.2199",
-//     "created_at": "2020-12-23 19:56:28",
-//     "updated_at": "2020-12-23 19:56:28"
-
-// USED IN VALIDATION
+// // USED IN VALIDATION
 const initialFormErrors = {
   username: "",
   password: "",
@@ -81,8 +69,8 @@ export default function SignUp() {
       email: formValues.email.trim(),
     };
     // I don't need these two lines of code because I'm using schema for validation. But... Maybe it would have been more clean to use these two lines. 
-    // if (!newUser.username || !newUser.password || !newUser.email)
-    // return;
+    if (!newUser.username || !newUser.password || !newUser.email)
+    return;
 
     //POST request to /auth/register and reset form
     axios
@@ -97,8 +85,7 @@ export default function SignUp() {
   };
 
   //Side Effects
-  //put user in state. GET all users from user or register API? Do I need to get users to make sure they're not registering twice?
-
+  //put user in state
   useEffect(() => {
     axios
       .get(`${baseUrl}/${registerUrl}`)
@@ -171,11 +158,9 @@ export default function SignUp() {
           <span>I agree to all the statements in the <b>terms of service</b></span>
         </label>
         <br></br>
+        <button>Sign Up!</button>
         <button disabled={disabled}>Sign Up!</button>
-        {/* This should Link to the sign in component. Make sure path in Route matches also*/}
-        <Link to='/'>I'm already a member</Link>
-
-       
+        <Link to='/Login'>I'm already a member</Link>
       </div>
     </form>
     </div>
