@@ -22,14 +22,7 @@ const TruckCardButtons = styled.div`
   border: gray;
   font-size: 1.5em;
 `;
-const TruckCardButton = styled.div`
-  background-color: #ffd43b;
-  color: white;
-  margin-bottom: .5em; 
-  text-align: center; 
-  box-sizing: border-box; 
-  margin: .5em; 
-`;
+
 
 //BEGINNING OF COMPONENT 
 export default function TruckCard(props) {
