@@ -5,13 +5,23 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { Button } from "@material-ui/core/index";
+import { makeStyles } from '@material-ui/core/styles';
 
 const FaveHeader = styled.h1`
   color: black;
+  font-size: 2.5em;
+  margin-left: 1em;  
 `;
 
-function Favorites(props) {
+const useStyles = makeStyles({
+  root:{
+    marginLeft: 30, 
+  },
+})
+
+export default function Favorites(props) {
   const [faves, setFaves] = useState([]);
+  const classes = useStyles();
 
   useEffect(() => {
     axios
@@ -29,7 +39,6 @@ function Favorites(props) {
   return (
     <div className="favorite-background">
       <FaveHeader>Your Favorite Trucks</FaveHeader>
-      <Button variant="contained" color="default" onClick={returnHome}> Return to Home Page</Button>
       {faves.map((faveTruck) => {
         return (
           <FavoritesCard
@@ -39,8 +48,8 @@ function Favorites(props) {
           />
         );
       })}
+      <Button className={classes.root} variant="contained" color="default" onClick={returnHome}> Return to Home Page</Button>
     </div>
   );
 }
 
-export default Favorites;

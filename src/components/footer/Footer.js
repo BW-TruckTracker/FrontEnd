@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="footer-element">
           <IconButton size='small'>
           <RoomIcon fontSize='large' className='footer-button' />
-          <h3>GPS</h3>
+          <Link to='/About' style={{ color: 'gray', textDecoration: 'none'}}><h3>Explore</h3></Link>
           </IconButton>
       </div>
       <div className="footer-element">
