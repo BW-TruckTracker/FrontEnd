@@ -1,4 +1,3 @@
-import styled from 'styled-components'; 
 import TruckCard from './TruckCard.js';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
